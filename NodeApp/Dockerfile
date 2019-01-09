@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 #App binds to port 3000 so expose the docker to this port
-EXPOSE 3000
+EXPOSE 5000
 
 #Runtime: Command to run the app through CMD, runs the file 
 #defined in 'main' under pakcage.json
