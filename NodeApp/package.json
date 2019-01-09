@@ -1,0 +1,14 @@
+{
+  "name": "firstapp",
+  "version": "1.0.0",
+  "description": "first demo app",
+  "main": "http-server.js",
+  "scripts": {
+    "start": "node http-server.js"
+  },
+  "keywords": [
+    "S"
+  ],
+  "author": "Shilpa",
+  "license": "ISC"
+}
