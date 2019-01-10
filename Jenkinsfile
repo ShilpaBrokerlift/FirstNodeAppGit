@@ -2,7 +2,17 @@ pipeline {
     agent any
     
     stages {
-        stage('Ok') {
+        stage('build api') {
+            steps {
+                echo "Ok"
+            }
+        }
+        stage('build docker image') {
+            steps {
+                echo "Ok"
+            }
+        }
+        stage('deploy docker image to repo') {
             steps {
                 echo "Ok"
             }
