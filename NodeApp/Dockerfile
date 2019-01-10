@@ -8,12 +8,12 @@ WORKDIR /usr/src/app
 #Install all dependency from package and package-lock
 COPY package*.json ./
 
-RUN npm install
+#	RUN npm install
 
 #Bundle app source code
 COPY . .
 
-#App binds to port 3000 so expose the docker to this port
+#App binds to port 5000 so expose the docker to this port
 EXPOSE 5000
 
 #Runtime: Command to run the app through CMD, runs the file 
