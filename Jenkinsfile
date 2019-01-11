@@ -22,7 +22,7 @@ pipeline {
         }
        stage('Four') {
 	    	     parallel {
-				stage('Unit 'Test) {
+				stage('Unit Test') {
 						steps{
 			    				echo "Runnin the unit test"						
 						}
