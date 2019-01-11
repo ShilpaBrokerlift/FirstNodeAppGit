@@ -7,7 +7,7 @@ pipeline {
                 echo "This is the first step in the pipeline"
             }
         }
-        stage('Twp') {
+        stage('Two') {
             steps {
                 input('Do you want to proceed')
             }
@@ -15,7 +15,7 @@ pipeline {
         stage('Three') {
             when {
                 not "branch"
-            }
+             }
 	   steps {
 	    	echo "on master branch"
             }
@@ -23,25 +23,25 @@ pipeline {
        stage('Four') {
 	    	     parallel {
 				stage('Unit 'Test) {
-				steps{
-			    echo "Runnin the unit test"						
-				}
-}
+						steps{
+			    				echo "Runnin the unit test"						
+						}
+					}
 				stage('Integration Test){
-					agent {
-					docker {
-						reuseNode false
-						image 'ubuntu'
-				}	
-	}			
-					steps {
-						echo 'Running integration test'				
-			}
-	}
-             }
-}
+							agent {
+								docker {
+									reuseNode false
+									image 'ubuntu'
+								}	
+							}			
+							steps {
+								echo 'Running integration test'				
+							}
+						}
+             				}
+				}
 
-    }
+    			}
     post {
         always {
             emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
